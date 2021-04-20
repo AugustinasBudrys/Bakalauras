@@ -41,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
         controller2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
         interactions2D.Enter(enter);
-        enter = false;
         interactions2D.Grab(interact);
+        interactions2D.buttonAction(enter);
+        enter = false;
     }
 }

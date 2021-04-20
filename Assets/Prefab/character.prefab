@@ -169,7 +169,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_GroundCheck: {fileID: 7260831841046665747}
   m_CeilingCheck: {fileID: 7260831842956035138}
   m_CrouchDisableCollider: {fileID: 0}
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneName: level3
+  clickAmount: 0
   grabDetect: {fileID: 7260831843128394696}
   boxHolder: {fileID: 7260831841917298393}
   rayDist: 2

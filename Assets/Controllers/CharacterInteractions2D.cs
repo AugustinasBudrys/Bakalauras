@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class CharacterInteractions2D : MonoBehaviour
 {
     private bool isTriggered = false;
+    private bool buttonTrigger = false;
     private int score = 0;
     public string SceneName;
 
     private GameObject coin;
+    private bool increment;
+    public int clickAmount=0;
     public Transform grabDetect;
     public Transform boxHolder;
     public float rayDist;
@@ -19,11 +22,15 @@ public class CharacterInteractions2D : MonoBehaviour
         if(door.gameObject.layer == 6)
         {
             isTriggered = true;
+        }else if(door.gameObject.layer == 9)
+        {
+            buttonTrigger = true;
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         isTriggered = false;
+        buttonTrigger = false;
     }
     public void Enter(bool enter)
     {
@@ -54,6 +61,27 @@ public class CharacterInteractions2D : MonoBehaviour
                 coin.GetComponent<Rigidbody2D>().isKinematic = false;
                 coin.GetComponent<Rigidbody2D>().simulated = true;
                 coin = null;
+        }
+    }
+
+    public void setClickAction(bool add)
+    {
+        increment = add;
+    }
+
+    public void buttonAction(bool interact)
+    {
+        if(interact == true && buttonTrigger == true)
+        {
+            if(increment == true)
+            {
+                clickAmount += 1;
+            }else if(clickAmount == 0)
+            {
+                clickAmount = 0;
+            }else{
+                clickAmount -= 1;
+            }
         }
     }
 }
