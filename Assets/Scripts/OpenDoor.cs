@@ -9,15 +9,20 @@ public class OpenDoor : MonoBehaviour
     private Sprite open;
     [SerializeField]
     private Sprite close;
-    public void Open()
+    public void Open(bool isCorrect)
     {
         gameObject.layer = 6;
+        if(isCorrect == true)
+        {
+            gameObject.tag = "correct";
+        }
         gameObject.GetComponent<SpriteRenderer>().sprite = open;
     }
 
     public void Close()
     {
         gameObject.layer = 8;
+        gameObject.tag = "untagged";
         gameObject.GetComponent<SpriteRenderer>().sprite = close;
     }
 }

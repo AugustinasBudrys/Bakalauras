@@ -7,6 +7,11 @@ public class Counter : MonoBehaviour
     private int Count = 0;
     [SerializeField]
     private OpenDoor doors;
+    [SerializeField]
+    private ButtonLogic button;
+    [SerializeField]
+    private int correctAmount = 3;
+    private bool isNumber = false;
     void OnTriggerEnter2D(Collider2D coin)
     {
         if(coin.gameObject.tag == "coin")
@@ -14,6 +19,11 @@ public class Counter : MonoBehaviour
             Count += 1;
             DoorControl();
             Debug.Log(Count);
+        }
+        if(coin.gameObject.tag == "number")
+        {
+            isNumber = true;
+            button.confirmButton(isNumber);
         }
     }
 
@@ -25,13 +35,20 @@ public class Counter : MonoBehaviour
             DoorControl();
             Debug.Log(Count);
         }
+        if(coin.gameObject.tag == "number")
+        {
+            isNumber = false;
+            button.confirmButton(isNumber);
+        }
     }
 
     void DoorControl()
-    {
-        if(Count > 0)
+    {   if(Count == correctAmount)
         {
-            doors.Open();
+            doors.Open(true);
+        }else if(Count > 0)
+        {
+            doors.Open(false);
         }else{
             doors.Close();
         }

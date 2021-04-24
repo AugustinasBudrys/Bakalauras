@@ -7,6 +7,9 @@ public class CharacterInteractions2D : MonoBehaviour
 {
     private bool isTriggered = false;
     private bool buttonTrigger = false;
+    public bool buttonState = false;
+    private bool switchButton = false;
+    private bool isCorrect = false;
     private int score = 0;
     public string SceneName;
 
@@ -22,6 +25,10 @@ public class CharacterInteractions2D : MonoBehaviour
         if(door.gameObject.layer == 6)
         {
             isTriggered = true;
+            if(door.gameObject.tag == "correct")
+            {
+                isCorrect = true;
+            }
         }else if(door.gameObject.layer == 9)
         {
             buttonTrigger = true;
@@ -36,8 +43,12 @@ public class CharacterInteractions2D : MonoBehaviour
     {
         if(enter == true && isTriggered == true)
         {
+            if(isCorrect == true)
+            {
+                score += 1;
+            }
+            Debug.Log(score);
             SceneManager.LoadScene(SceneName);
-            score += 1;
         }
     }
 
@@ -45,7 +56,7 @@ public class CharacterInteractions2D : MonoBehaviour
     {
         RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale, rayDist);
 
-        if(grabCheck.collider != null && grabCheck.collider.tag == "coin")
+        if(grabCheck.collider != null && grabCheck.collider.tag == "coin" || grabCheck.collider != null && grabCheck.collider.tag == "number")
         {
             if(interact == true && coin == null)
             {
@@ -64,14 +75,25 @@ public class CharacterInteractions2D : MonoBehaviour
         }
     }
 
-    public void setClickAction(bool add)
+    public void setClickAction(bool add, bool notCounting)
     {
+        if(notCounting == true)
+        {
+            switchButton = true;
+        }
         increment = add;
     }
 
     public void buttonAction(bool interact)
     {
-        if(interact == true && buttonTrigger == true)
+        if(interact == true && buttonTrigger == true && switchButton == true && buttonState == false)
+        {
+            buttonState = true;
+        }else if(interact == true && buttonTrigger == true && switchButton == true)
+        {
+            buttonState = false;
+        }
+        if(interact == true && buttonTrigger == true && switchButton == false)
         {
             if(increment == true)
             {

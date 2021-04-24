@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 191563553}
   - component: {fileID: 191563556}
   - component: {fileID: 191563555}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 1
-  m_TagString: coin
+  m_TagString: number
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 203873075}
   - component: {fileID: 203873074}
   - component: {fileID: 203873076}
+  - component: {fileID: 203873077}
   m_Layer: 7
   m_Name: CoinHolder
   m_TagString: Untagged
@@ -363,6 +364,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 0.86871815}
   m_EdgeRadius: 0
+--- !u!114 &203873077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203873073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc74c2b29dc0204183e1769e34634bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors: {fileID: 1427353725}
+  button: {fileID: 574039232}
 --- !u!1 &220735574
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doors: {fileID: 1427353725}
+  button: {fileID: 0}
 --- !u!61 &480914296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -928,6 +944,7 @@ GameObject:
   - component: {fileID: 574039231}
   - component: {fileID: 574039230}
   - component: {fileID: 574039232}
+  - component: {fileID: 574039233}
   m_Layer: 9
   m_Name: ButtonStand
   m_TagString: Untagged
@@ -1015,6 +1032,32 @@ MonoBehaviour:
   click: {fileID: 1879304268}
   doors: {fileID: 1427353725}
   text: {fileID: 1747305483}
+--- !u!61 &574039233
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574039229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.058304787, y: -0.39841473}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8108616, y: 1.7631705}
+  m_EdgeRadius: 0
 --- !u!1 &579015091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1174,7 @@ GameObject:
   - component: {fileID: 625958360}
   m_Layer: 0
   m_Name: 4
-  m_TagString: coin
+  m_TagString: number
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1541,7 +1584,7 @@ GameObject:
   - component: {fileID: 1359745127}
   m_Layer: 0
   m_Name: 3
-  m_TagString: coin
+  m_TagString: number
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1875,7 +1918,7 @@ GameObject:
   - component: {fileID: 1772295025}
   m_Layer: 10
   m_Name: 2
-  m_TagString: coin
+  m_TagString: number
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

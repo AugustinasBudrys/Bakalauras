@@ -13,6 +13,7 @@ public class ButtonLogic : MonoBehaviour
     [SerializeField]
     private Text text;
     private bool notCounting = true;
+    private bool isNotEmpty = false;
 
     void FixedUpdate()
     {
@@ -44,23 +45,42 @@ public class ButtonLogic : MonoBehaviour
     {
         if(inRange == true && gameObject.tag == "increment")
         {
-            click.setClickAction(true);
             notCounting = false;
+            click.setClickAction(true, notCounting);
         }else if(inRange == true && gameObject.tag == "decrement"){
-            click.setClickAction(false);
             notCounting = false;
+            click.setClickAction(false, notCounting);
         }else if(inRange == true)
         {
             notCounting = true;
+            click.setClickAction(false, notCounting); 
         }
     }
 
+    public void confirmButton(bool isFilled)
+    {
+        if(isFilled == true)
+        {
+            isNotEmpty = true;
+        }
+        if(isFilled == false)
+        {
+            isNotEmpty = false;
+        }
+    }
     public void DoorControl()
     {
-        if(click.clickAmount > 0)
+        if(click.buttonState == true && isNotEmpty == true)
         {
-            doors.Open();
-        }else{
+            doors.Open(false);
+        }else if(click.buttonState == false || isNotEmpty == false)
+        {
+            doors.Close();
+        }
+        if(click.clickAmount > 0 && notCounting == false)
+        {
+            doors.Open(false);
+        }else if(notCounting == false){
             doors.Close();
         }
     }
