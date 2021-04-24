@@ -22,7 +22,7 @@ public class OpenDoor : MonoBehaviour
     public void Close()
     {
         gameObject.layer = 8;
-        gameObject.tag = "untagged";
+        gameObject.tag = "Untagged";
         gameObject.GetComponent<SpriteRenderer>().sprite = close;
     }
 }

@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 7260831842699182742}
   - component: {fileID: 7260831842699182743}
   - component: {fileID: 7260831842699182733}
+  - component: {fileID: 410966559385058374}
   m_Layer: 3
   m_Name: character
   m_TagString: Untagged
@@ -243,11 +244,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96815af532efd5469ad77f259682958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonState: 0
   SceneName: level3
   clickAmount: 0
   grabDetect: {fileID: 7260831843128394696}
   boxHolder: {fileID: 7260831841917298393}
   rayDist: 2
+--- !u!114 &410966559385058374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7260831842699182740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a50d91157d2bc4886052874893654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeCounter: {fileID: 172068112823339115, guid: b806def2bdb0bc84bbe8cbee5797b9c3, type: 3}
 --- !u!1 &7260831842956035139
 GameObject:
   m_ObjectHideFlags: 0

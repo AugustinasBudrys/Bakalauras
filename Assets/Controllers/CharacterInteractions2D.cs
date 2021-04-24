@@ -10,7 +10,6 @@ public class CharacterInteractions2D : MonoBehaviour
     public bool buttonState = false;
     private bool switchButton = false;
     private bool isCorrect = false;
-    private int score = 0;
     public string SceneName;
 
     private GameObject coin;
@@ -43,11 +42,11 @@ public class CharacterInteractions2D : MonoBehaviour
     {
         if(enter == true && isTriggered == true)
         {
+            VariableControl.instance.time = TimerController.instance.elapsedTime;
             if(isCorrect == true)
             {
-                score += 1;
+                VariableControl.instance.score += 1;
             }
-            Debug.Log(score);
             SceneManager.LoadScene(SceneName);
         }
     }

@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
     bool enter = false;
     bool interact = false;
     public float runSpeed = 40f;
+    bool begin = true;
     // Update is called once per frame
+
     void Update()
     {
        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -44,5 +46,15 @@ public class PlayerMovement : MonoBehaviour
         interactions2D.Grab(interact);
         interactions2D.buttonAction(enter);
         enter = false;
+        if(begin == true)
+        {
+            BeginGame();
+            begin = false;
+        }
+    }
+
+    void BeginGame()
+    {
+       TimerController.instance.BeginTimer();
     }
 }
