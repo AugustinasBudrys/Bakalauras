@@ -12,6 +12,7 @@ public class Counter : MonoBehaviour
     [SerializeField]
     private int correctAmount = 3;
     private bool isNumber = false;
+    public bool isCorrect = false;
     void OnTriggerEnter2D(Collider2D coin)
     {
         if(coin.gameObject.tag == "coin")
@@ -24,6 +25,15 @@ public class Counter : MonoBehaviour
         {
             isNumber = true;
             button.confirmButton(isNumber);
+        }
+        if(coin.gameObject.tag == "shape")
+        {
+            Count += 1;
+            DoorControl();
+            if(coin.gameObject.layer == 11)
+            {
+                isCorrect = true;
+            }
         }
     }
 
@@ -40,10 +50,19 @@ public class Counter : MonoBehaviour
             isNumber = false;
             button.confirmButton(isNumber);
         }
+        if(coin.gameObject.tag == "shape")
+        {
+            Count -= 1;
+            DoorControl();
+            if(coin.gameObject.layer == 11)
+            {
+                isCorrect = false;
+            }
+        }
     }
 
     void DoorControl()
-    {   if(Count == correctAmount)
+    {   if(Count == correctAmount || isCorrect == true)
         {
             doors.Open(true);
         }else if(Count > 0)

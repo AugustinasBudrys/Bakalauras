@@ -46,6 +46,7 @@ public class CharacterInteractions2D : MonoBehaviour
             if(isCorrect == true)
             {
                 VariableControl.instance.score += 1;
+                Debug.Log(VariableControl.instance.score);
             }
             SceneManager.LoadScene(SceneName);
         }
@@ -55,7 +56,9 @@ public class CharacterInteractions2D : MonoBehaviour
     {
         RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale, rayDist);
 
-        if(grabCheck.collider != null && grabCheck.collider.tag == "coin" || grabCheck.collider != null && grabCheck.collider.tag == "number")
+        if( grabCheck.collider != null && grabCheck.collider.tag == "coin" 
+            || grabCheck.collider != null && grabCheck.collider.tag == "number" 
+            || grabCheck.collider != null && grabCheck.collider.tag == "shape")
         {
             if(interact == true && coin == null)
             {

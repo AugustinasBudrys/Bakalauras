@@ -8,7 +8,7 @@ TagManager:
   - correct
   - increment
   - decrement
-  - number
+  - shape
   layers:
   - Default
   - TransparentFX
@@ -22,7 +22,7 @@ TagManager:
   - Button
   - Number
   - Correct
-  - 
+  - Shape
   - 
   - 
   - 
