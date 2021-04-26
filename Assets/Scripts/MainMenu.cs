@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        VariableControl.instance.score = 0;
+        VariableControl.instance.time = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

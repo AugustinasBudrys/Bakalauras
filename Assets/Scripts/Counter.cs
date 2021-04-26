@@ -29,11 +29,11 @@ public class Counter : MonoBehaviour
         if(coin.gameObject.tag == "shape")
         {
             Count += 1;
-            DoorControl();
             if(coin.gameObject.layer == 11)
             {
                 isCorrect = true;
             }
+            DoorControl();
         }
     }
 
