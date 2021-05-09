@@ -747,17 +747,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'What comes next in a sequenece
+  m_Text: 'Which of the present numbers is the highest whole number?
 
-    1-6-16-36-76-?
-
-    1:
+    1: 0
 
     2:
+    26.5
 
-    3:
+    3: 5
 
-    4:'
+    4: -100'
 --- !u!222 &521633848
 CanvasRenderer:
   m_ObjectHideFlags: 0

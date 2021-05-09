@@ -31,11 +31,6 @@ public class TimerController : MonoBehaviour
 
         StartCoroutine(UpdateTimer());
     }
-
-    public void EndTimer()
-    {
-        timerGoing = false;
-    }
     
     private IEnumerator UpdateTimer()
     {

@@ -14,6 +14,9 @@ public class ButtonLogic : MonoBehaviour
     private Text text;
     private bool notCounting = true;
     private bool isNotEmpty = false;
+    private bool isCorrect = false;
+    [SerializeField]
+    private int correctAmount;
 
     void FixedUpdate()
     {
@@ -57,8 +60,9 @@ public class ButtonLogic : MonoBehaviour
         }
     }
 
-    public void confirmButton(bool isFilled)
+    public void confirmButton(bool isFilled, bool correct)
     {
+        isCorrect = correct;
         if(isFilled == true)
         {
             isNotEmpty = true;
@@ -70,12 +74,20 @@ public class ButtonLogic : MonoBehaviour
     }
     public void DoorControl()
     {
+        if(click.buttonState == true && isNotEmpty == true && isCorrect == true)
+        {
+            doors.Open(true);
+        }
         if(click.buttonState == true && isNotEmpty == true)
         {
             doors.Open(false);
         }else if(click.buttonState == false || isNotEmpty == false)
         {
             doors.Close();
+        }
+        if(click.clickAmount == correctAmount && notCounting == false)
+        {
+            doors.Open(true);
         }
         if(click.clickAmount > 0 && notCounting == false)
         {

@@ -24,7 +24,11 @@ public class Counter : MonoBehaviour
         if(coin.gameObject.tag == "number")
         {
             isNumber = true;
-            button.confirmButton(isNumber);
+            if(coin.gameObject.layer == 11)
+            {
+                isCorrect = true;
+            }
+            button.confirmButton(isNumber, isCorrect);
         }
         if(coin.gameObject.tag == "shape")
         {
@@ -48,7 +52,8 @@ public class Counter : MonoBehaviour
         if(coin.gameObject.tag == "number")
         {
             isNumber = false;
-            button.confirmButton(isNumber);
+            isCorrect = false;
+            button.confirmButton(isNumber, isCorrect);
         }
         if(coin.gameObject.tag == "shape")
         {

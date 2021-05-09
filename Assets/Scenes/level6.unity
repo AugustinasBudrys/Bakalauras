@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 191563553}
   - component: {fileID: 191563556}
   - component: {fileID: 191563555}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: 1
   m_TagString: number
   m_Icon: {fileID: 0}
@@ -471,8 +471,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -224, y: 105}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -279.7, y: 141.15677}
+  m_SizeDelta: {x: 175.6, y: 17.6865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220735576
 MonoBehaviour:
@@ -507,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 96
+  m_Text: Press the button to confirm
 --- !u!222 &220735577
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -785,8 +785,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5, y: 59}
-  m_SizeDelta: {x: 250, y: 40}
+  m_AnchoredPosition: {x: 9.4, y: 50.784}
+  m_SizeDelta: {x: 262.3136, y: 101.5677}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &521633847
 MonoBehaviour:
@@ -815,15 +815,21 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'What comes next in a sequenece
+  m_Text: 'What goes between the one and the three and is lower than four?
 
-    1-6-16-36-76-?'
+    1:Logic
+
+    2:Imagination
+
+    3:Motivation
+
+    4:Confusion'
 --- !u!222 &521633848
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -931,6 +937,7 @@ MonoBehaviour:
   click: {fileID: 1879304268}
   doors: {fileID: 1427353725}
   text: {fileID: 0}
+  correctAmount: 0
 --- !u!61 &574039233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1137,7 +1144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625958357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1545, y: -4.9525, z: 0}
+  m_LocalPosition: {x: -10.96, y: 3.32, z: 0}
   m_LocalScale: {x: 0.7848, y: 0.7168, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1419,7 +1426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 172068112823339112, guid: b806def2bdb0bc84bbe8cbee5797b9c3, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 172068112823339112, guid: b806def2bdb0bc84bbe8cbee5797b9c3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1479,7 +1486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 172068112823339112, guid: b806def2bdb0bc84bbe8cbee5797b9c3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -82
+      value: -27.599976
       objectReference: {fileID: 0}
     - target: {fileID: 172068112823339112, guid: b806def2bdb0bc84bbe8cbee5797b9c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1848,7 +1855,7 @@ GameObject:
   - component: {fileID: 1772295027}
   - component: {fileID: 1772295026}
   - component: {fileID: 1772295025}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: 2
   m_TagString: number
   m_Icon: {fileID: 0}
@@ -1961,7 +1968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772295024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.0925, y: 3.4895, z: 0}
+  m_LocalPosition: {x: 0.24, y: -4.84, z: 0}
   m_LocalScale: {x: 0.76216817, y: 0.6715104, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2125,7 +2132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260831842699182733, guid: dae52a4bd8ae5c44da817f49f603bdf1, type: 3}
       propertyPath: SceneName
-      value: level7
+      value: Outro
       objectReference: {fileID: 0}
     - target: {fileID: 7260831842699182740, guid: dae52a4bd8ae5c44da817f49f603bdf1, type: 3}
       propertyPath: m_Name
@@ -3389,7 +3396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359, y: 105}
+  m_AnchoredPosition: {x: 313.5, y: 125.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076381586
@@ -3425,7 +3432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 176
+  m_Text: Put the number in the box
 --- !u!222 &2076381587
 CanvasRenderer:
   m_ObjectHideFlags: 0
