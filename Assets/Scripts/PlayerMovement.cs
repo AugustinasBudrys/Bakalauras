@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used to register player actions
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller2D;
@@ -37,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
            interact=false;
        }
     }
-
+    // Fixed update is called 50 times per frame to check for movement calls
     void FixedUpdate()
     {
-        controller2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        controller2D.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
         interactions2D.Enter(enter);
         interactions2D.Grab(interact);
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Calls timer from the timer controller to start the timer upon game start
     void BeginGame()
     {
        TimerController.instance.BeginTimer();

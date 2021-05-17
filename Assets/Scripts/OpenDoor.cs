@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Class responsible for changing the door state from open to closed and vice versa
 public class OpenDoor : MonoBehaviour
 {
     private SpriteRenderer spriter;
@@ -9,6 +10,7 @@ public class OpenDoor : MonoBehaviour
     private Sprite open;
     [SerializeField]
     private Sprite close;
+    // Opens the door changes its sprite and if its correct indicates it
     public void Open(bool isCorrect)
     {
         gameObject.layer = 6;
@@ -19,6 +21,7 @@ public class OpenDoor : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = open;
     }
 
+    // Closes the door once a completion action is reversed and changes the sprite
     public void Close()
     {
         gameObject.layer = 8;

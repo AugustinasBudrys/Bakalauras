@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used in registering objects being moved to designated area
 public class Counter : MonoBehaviour
 {
     private int Count = 0;
@@ -13,6 +14,8 @@ public class Counter : MonoBehaviour
     private int correctAmount = 3;
     private bool isNumber = false;
     public bool isCorrect = false;
+
+    // Once and object enters an area it gets registered
     void OnTriggerEnter2D(Collider2D coin)
     {
         if(coin.gameObject.tag == "coin")
@@ -41,6 +44,7 @@ public class Counter : MonoBehaviour
         }
     }
 
+    // Once and object gets removed from the area it gets registered
     void OnTriggerExit2D(Collider2D coin)
     {
         if(coin.gameObject.tag == "coin")
@@ -66,6 +70,7 @@ public class Counter : MonoBehaviour
         }
     }
 
+    // Calls for door opening depending on the supplied objects
     void DoorControl()
     {   if(Count == correctAmount || isCorrect == true)
         {

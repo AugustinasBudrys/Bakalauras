@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Used to define what action happens when an in game button gets pressed
 public class ButtonLogic : MonoBehaviour
 {
     private bool inRange;
@@ -18,6 +19,7 @@ public class ButtonLogic : MonoBehaviour
     [SerializeField]
     private int correctAmount;
 
+    //Depending on the level checks for button changes and opens or closes doors depending on actions taken
     void FixedUpdate()
     {
         DoorControl();
@@ -26,6 +28,8 @@ public class ButtonLogic : MonoBehaviour
             text.text = ""+click.clickAmount;
         }
     }
+
+    //When in range to a button it can be pressed
     void OnTriggerEnter2D(Collider2D button)
     {
         if(button.gameObject.layer == 3)
@@ -35,6 +39,7 @@ public class ButtonLogic : MonoBehaviour
         }
     }
 
+    //When player leaves button range it is registered so it can't be pressed
     void OnTriggerExit2D(Collider2D button)
     {
         if(button.gameObject.layer == 3)
@@ -43,7 +48,8 @@ public class ButtonLogic : MonoBehaviour
             setAction();
         }
     }
-    // Start is called before the first frame update
+
+    // Sets the action which the button performs increments, decrements or confirms/cancels
     public void setAction()
     {
         if(inRange == true && gameObject.tag == "increment")
@@ -60,6 +66,7 @@ public class ButtonLogic : MonoBehaviour
         }
     }
 
+    // Confirmation button when a designated area is filled used to confirm or cancel action
     public void confirmButton(bool isFilled, bool correct)
     {
         isCorrect = correct;
@@ -72,6 +79,8 @@ public class ButtonLogic : MonoBehaviour
             isNotEmpty = false;
         }
     }
+
+    //Door control depending on the button action and button state opens or closes the doors 
     public void DoorControl()
     {
         if(click.buttonState == true && isNotEmpty == true && isCorrect == true)
